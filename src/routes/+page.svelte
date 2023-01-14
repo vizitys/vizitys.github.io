@@ -1,28 +1,28 @@
 <script lang="ts">
-  import Graphemer from "graphemer";
+  import GraphemeSplitter from "grapheme-splitter";
 
   // dumb solution for dumb unicode problem aka emojis being more than one character
-  const graphemer = new Graphemer();
+  const splitter = new GraphemeSplitter();
 
   const nameGoal = "Vinski Lång";
-  const descriptionGoal = "Site still in developement 🛠️";
+  const descriptionGoal = "Site still in development 🛠️";
 
   let name = "";
   let description = "";
 
-  graphemer.splitGraphemes(nameGoal).forEach((char, i) => {
+  splitter.splitGraphemes(nameGoal).forEach((char, i) => {
     setTimeout(() => {
       name += char;
     }, 100 * i);
   });
 
   setTimeout(() => {
-    graphemer.splitGraphemes(descriptionGoal).forEach((char, i) => {
+    splitter.splitGraphemes(descriptionGoal).forEach((char, i) => {
       setTimeout(() => {
         description += char;
       }, 100 * i);
     });
-  }, 100 * graphemer.countGraphemes(name) + 2000);
+  }, 100 * splitter.countGraphemes(name) + 2000);
 </script>
 
 <main>
