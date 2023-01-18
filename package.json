@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "deploy": "yarn build && touch build/.nojekyll && gh-pages -d build -t true",
+    "deploy": "yarn build && touch build/.nojekyll && echo 'vinski.fi' > build/CNAME && gh-pages -d build -t true",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
