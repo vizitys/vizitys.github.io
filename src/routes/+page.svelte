@@ -16,33 +16,61 @@
     }, 100 * i);
   });
 
-  setTimeout(() => {
-    splitter.splitGraphemes(descriptionGoal).forEach((char, i) => {
-      setTimeout(() => {
-        description += char;
-      }, 100 * i);
-    });
-  }, 100 * splitter.countGraphemes(name) + 2000);
+  setTimeout(
+    () => {
+      splitter.splitGraphemes(descriptionGoal).forEach((char, i) => {
+        setTimeout(() => {
+          description += char;
+        }, 100 * i);
+      });
+    },
+    100 * splitter.countGraphemes(name) + 2000,
+  );
 </script>
 
 <main>
-  <div class="content">
-    <h1 class="me">{name}</h1>
-    <p class="description">{description}</p>
+  <div class="flex justify-around">
+    <div class="content mt-10">
+      <div class="title-container m-52">
+        <h1 class="me">{name}</h1>
+        <p class="description">{description}</p>
+      </div>
+      <img
+        src="https://avatars.githubusercontent.com/u/53524661"
+        alt="Github Profile"
+        class="profile-pic rounded-full"
+      />
+    </div>
   </div>
 </main>
 
-<style>
-  main {
-    font-family: Clear Sans, Helvetica Neue, Arial, sans-serif;
+<style lang="postcss">
+  .content {
     display: flex;
+    flex-direction: row-reverse;
+
+    width: 70%;
+
     justify-content: center;
     align-items: center;
     height: 80vh;
   }
 
-  .content {
+  .title-container {
     text-align: center;
+    animation: move-text 2s 3s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
+
+    margin-left: -35%;
+    margin-right: 0;
+  }
+
+  .profile-pic {
+    animation: fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
+    opacity: 0;
+  }
+
+  h1 {
+    font-weight: 700;
   }
 
   @keyframes blink {
@@ -54,6 +82,25 @@
     }
     100% {
       opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes move-text {
+    from {
+      /* margin-left: -35%;
+      margin-right: 0; */
+    }
+    to {
+      margin: 13rem;
     }
   }
 

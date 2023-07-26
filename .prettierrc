@@ -1,4 +1,3 @@
 {
-  "plugins": ["prettier-plugin-svelte"],
-  "pluginSearchDirs": ["."]
+  "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"]
 }
