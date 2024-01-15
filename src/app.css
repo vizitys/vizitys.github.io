@@ -15,7 +15,16 @@
 
   color-scheme: light dark;
   color: whitesmoke;
-  background-color: #242424;
+
+  /* imported in tailwind.config.js */
+  --color-background: 22 71 115;
+  background-color: var(--color-background);
+
+  --color-background-darker: 11 43 64;
+
+  --color-accent-1: 30 89 89;
+  --color-accent-2: 59 140 110;
+  --color-accent-3: 137 217 157;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,10 +43,10 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: whitesmoke;
   }
-}
+} */

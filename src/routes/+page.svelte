@@ -29,7 +29,7 @@
 </script>
 
 <main>
-  <div class="flex justify-around">
+  <div class="flex justify-around bg-background">
     <div class="content mt-10">
       <div class="title-container m-52">
         <h1 class="me">{name}</h1>
@@ -53,7 +53,6 @@
 
     justify-content: center;
     align-items: center;
-    height: 80vh;
   }
 
   .title-container {
