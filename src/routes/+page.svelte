@@ -1,6 +1,12 @@
 <script lang="ts">
   import GraphemeSplitter from "grapheme-splitter";
 
+  // scroll container
+  let scrollWrapper: HTMLDivElement;
+  let scrollContainers: HTMLElement[] = [];
+
+  $: console.log(scrollContainers);
+
   // dumb solution for dumb unicode problem aka emojis being more than one character
   const splitter = new GraphemeSplitter();
 
@@ -29,22 +35,90 @@
 </script>
 
 <main>
-  <div class="flex justify-around bg-background">
-    <div class="content mt-10">
-      <div class="title-container m-52">
-        <h1 class="me">{name}</h1>
-        <p class="description">{description}</p>
+  <div id="scroll-wrapper" bind:this={scrollWrapper}>
+    <section
+      id="1"
+      class="site-section bg-background"
+      bind:this={scrollContainers[$$props.id]}
+    >
+      <div class="content mt-10">
+        <div class="title-container m-52">
+          <h1 class="me">{name}</h1>
+          <p class="description">{description}</p>
+        </div>
+        <img
+          src="./src/static/me.jpg"
+          alt="Profile of Vinski Lång"
+          class="profile-pic rounded-full"
+        />
       </div>
-      <img
-        src="https://avatars.githubusercontent.com/u/53524661"
-        alt="Github Profile"
-        class="profile-pic rounded-full"
-      />
-    </div>
+    </section>
+    <section
+      id="2"
+      class="site-section bg-background"
+      bind:this={scrollContainers[$$props.id]}
+    >
+      mömmömmöö
+    </section>
+    <section
+      id="3"
+      class="site-section bg-background"
+      bind:this={scrollContainers[$$props.id]}
+    >
+      mömmömmöö
+    </section>
+    <section
+      id="4"
+      class="site-section bg-background"
+      bind:this={scrollContainers[$$props.id]}
+    >
+      mömmömmöö
+    </section>
   </div>
 </main>
 
 <style lang="postcss">
+  /* *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  } */
+
+  #scroll-wrapper {
+    width: 100vw;
+    height: 100vh;
+    transition: all 2.5s ease;
+
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  .site-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-bottom: 1px;
+
+    scroll-snap-align: start;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
   .content {
     display: flex;
     flex-direction: row-reverse;
@@ -66,6 +140,7 @@
   .profile-pic {
     animation: fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
     opacity: 0;
+    width: 35%;
   }
 
   h1 {

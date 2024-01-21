@@ -2,7 +2,7 @@
 </script>
 
 <div
-  class="flex justify-between bg-background-darker items-center px-3 [&>*]:py-3"
+  class="flex fixed z-50 w-full justify-between bg-background-darker items-center px-3 [&>*]:py-3"
 >
   <h1>&lt Vinski Lång /&gt</h1>
   <div class="">
