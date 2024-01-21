@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Icon from "$lib/components/Icon.svelte";
   import GraphemeSplitter from "grapheme-splitter";
+  import { onMount } from "svelte";
 
   // scroll container
   let scrollWrapper: HTMLDivElement;
@@ -32,6 +34,18 @@
     },
     100 * splitter.countGraphemes(name) + 2000,
   );
+
+  onMount(() => {
+    scrollWrapper.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      const delta = event.deltaY;
+
+      scrollWrapper.scrollBy({
+        top: delta,
+        behavior: "smooth",
+      });
+    });
+  });
 </script>
 
 <main>
@@ -39,38 +53,41 @@
     <section
       id="1"
       class="site-section bg-background"
-      bind:this={scrollContainers[$$props.id]}
+      bind:this={scrollContainers[scrollContainers.length]}
     >
-      <div class="content mt-10">
-        <div class="title-container m-52">
-          <h1 class="me">{name}</h1>
-          <p class="description">{description}</p>
+      <div class="content mt-28">
+        <div class="pic-wrapper">
+          <div class="title-container m-52">
+            <h1 class="me">{name}</h1>
+            <p class="description">{description}</p>
+          </div>
+          <img
+            src="/me.jpg"
+            alt="Profile of Vinski Lång"
+            class="profile-pic rounded-full"
+          />
         </div>
-        <img
-          src="./src/static/me.jpg"
-          alt="Profile of Vinski Lång"
-          class="profile-pic rounded-full"
-        />
+        <Icon name="down" style="color: red; " />
       </div>
     </section>
     <section
       id="2"
-      class="site-section bg-background"
-      bind:this={scrollContainers[$$props.id]}
+      class="site-section bg-accent-1"
+      bind:this={scrollContainers[scrollContainers.length]}
     >
       mömmömmöö
     </section>
     <section
       id="3"
-      class="site-section bg-background"
-      bind:this={scrollContainers[$$props.id]}
+      class="site-section bg-accent-2"
+      bind:this={scrollContainers[scrollContainers.length]}
     >
       mömmömmöö
     </section>
     <section
       id="4"
-      class="site-section bg-background"
-      bind:this={scrollContainers[$$props.id]}
+      class="site-section bg-accent-3"
+      bind:this={scrollContainers[scrollContainers.length]}
     >
       mömmömmöö
     </section>
@@ -89,7 +106,7 @@
   #scroll-wrapper {
     width: 100vw;
     height: 100vh;
-    transition: all 2.5s ease;
+    transition: all 1.5s ease;
 
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
@@ -119,11 +136,11 @@
     }
   }
 
-  .content {
+  .pic-wrapper {
     display: flex;
     flex-direction: row-reverse;
 
-    width: 70%;
+    width: 100%;
 
     justify-content: center;
     align-items: center;
@@ -140,7 +157,7 @@
   .profile-pic {
     animation: fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
     opacity: 0;
-    width: 35%;
+    width: 25%;
   }
 
   h1 {

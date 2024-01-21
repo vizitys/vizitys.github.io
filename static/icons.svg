@@ -1,0 +1,8 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+    <!-- reference different icons via <Icon name="icon-downarrow"></Icon> -->
+        <symbol id="icon-downarrow" viewBox="0 0 20 20">
+          <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/>
+        </symbol>
+    </defs>
+</svg>
