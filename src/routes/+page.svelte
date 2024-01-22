@@ -67,7 +67,7 @@
             class="profile-pic rounded-full"
           />
         </div>
-        <Icon name="down" style="color: red; " />
+        <Icon name="down" />
       </div>
     </section>
     <section

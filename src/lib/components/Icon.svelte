@@ -1,17 +1,17 @@
 <script lang="ts">
-  import * as icons from "$lib/icons";
+  import { icons } from "$lib/icons.ts";
 
-  export let name: string;
-  export let stroke = 3;
+  export let name: keyof typeof icons;
+  export let stroke = 10;
 </script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  fill="none"
-  viewBox="0 0 24 24"
+  viewBox={icons[name].viewBox}
+  height="50"
+  width="50"
   stroke-width={stroke}
-  stroke="currentColor"
-  class={`w-6 h-6 ${$$props.class}`}
+  class={`w-6 h-6 ${$$props.class || ""}`}
 >
-  <path stroke-linecap="round" stroke-linejoin="round" d={icons[name]} />
+  <path d={icons[name].path} />
 </svg>
