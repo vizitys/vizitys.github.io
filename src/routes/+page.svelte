@@ -1,13 +1,34 @@
 <script lang="ts">
-  import Icon from "$lib/components/Icon.svelte";
-  import GraphemeSplitter from "grapheme-splitter";
   import { onMount } from "svelte";
+
+  import Card from "$lib/components/Card.svelte";
+  import Icon from "$lib/components/Icon.svelte";
+  import Modal from "$lib/components/Modal.svelte";
+  import GraphemeSplitter from "grapheme-splitter";
+
+  import type projects from "$lib/projects.ts";
 
   // scroll container
   let scrollWrapper: HTMLDivElement;
   let scrollContainers: HTMLElement[] = [];
 
   $: console.log(scrollContainers);
+
+  let modalOpen = false;
+
+  const projectsToBeImported: (keyof typeof projects)[] = [
+    "oispahalla",
+    "junction2022",
+    "junctionNexus",
+    "hallacoin",
+  ];
+
+  let currentProject: keyof typeof projects = projectsToBeImported[0];
+
+  function openModal(projectName: keyof typeof projects) {
+    currentProject = projectName;
+    modalOpen = true;
+  }
 
   // dumb solution for dumb unicode problem aka emojis being more than one character
   const splitter = new GraphemeSplitter();
@@ -49,13 +70,14 @@
 </script>
 
 <main>
+  <Modal projectName={currentProject} isOpen={modalOpen} />
   <div id="scroll-wrapper" bind:this={scrollWrapper}>
     <section
       id="1"
       class="site-section bg-background"
       bind:this={scrollContainers[scrollContainers.length]}
     >
-      <div class="content mt-28">
+      <div class="mt-36 items-center flex flex-col h-full justify-around">
         <div class="pic-wrapper">
           <div class="title-container m-52">
             <h1 class="me">{name}</h1>
@@ -67,7 +89,7 @@
             class="profile-pic rounded-full"
           />
         </div>
-        <Icon name="down" />
+        <Icon name="down" class="down-arrow bounce fill-accent-3 w-14 h-14" />
       </div>
     </section>
     <section
@@ -75,7 +97,20 @@
       class="site-section bg-accent-1"
       bind:this={scrollContainers[scrollContainers.length]}
     >
-      mömmömmöö
+      <div class="flex flex-col items-center text-center w-full [&>*]:py-3">
+        <h2>Projects</h2>
+        <p>
+          Despite being a beginner in my studies, I have lots of experience
+          under my belt via various projects I have done in my free time.
+        </p>
+        <div class="projects flex justify-around w-9/12">
+          {#each projectsToBeImported as project (project)}
+            <button on:click={() => openModal(project)}>
+              <Card projectName={project} />
+            </button>
+          {/each}
+        </div>
+      </div>
     </section>
     <section
       id="3"
@@ -160,8 +195,35 @@
     width: 25%;
   }
 
-  h1 {
-    font-weight: 700;
+  :global(.down-arrow) {
+    animation:
+      fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99),
+      bounce 2s ease infinite;
+    opacity: 0;
+  }
+
+  @keyframes bounce {
+    70% {
+      transform: translateY(0%);
+    }
+    80% {
+      transform: translateY(-15%);
+    }
+    90% {
+      transform: translateY(0%);
+    }
+    95% {
+      transform: translateY(-7%);
+    }
+    97% {
+      transform: translateY(0%);
+    }
+    99% {
+      transform: translateY(-3%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 
   @keyframes blink {
