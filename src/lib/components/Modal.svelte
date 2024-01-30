@@ -47,13 +47,16 @@
 </script>
 
 <div
-  class="modal"
-  style="display: {isOpen ? 'block' : 'none'}"
+  class="modal justify-center items-center"
+  style="display: {isOpen ? 'flex' : 'none'}"
   on:click={closeModal}
   on:keydown={handleKeydown}
 >
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div class="modal-content bg-background-darker z-10" on:click|stopPropagation>
+  <div
+    class="modal-content bg-background-darker z-10 mt-24"
+    on:click|stopPropagation
+  >
     <span class="close" on:click={closeModal}>&times;</span>
     <div class="modal-inner flex">
       <div class="max-h-full max-w-2xl">
@@ -79,13 +82,15 @@
       </div>
       <div class="p-5 max-w-3xl">
         <h2>{project.title}</h2>
-        <div class="mt-2 mb-6 [&>p]:my-2">
+        <div class="mt-2 mb-6 [&>p]:my-2 [&>*>a]:underline">
           <SvelteMarkdown source={project.longDescription} />
         </div>
         {#each project.links as link (link)}
           <div class="flex">
             <Icon name="link" class="w-6 h-6 fill-accent-2" />
-            <a href={link} target="_blank" rel="noreferrer">{link}</a>
+            <a class="underline" href={link} target="_blank" rel="noreferrer"
+              >{link}</a
+            >
           </div>
         {/each}
       </div>
@@ -106,7 +111,6 @@
   }
 
   .modal-content {
-    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
