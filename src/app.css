@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* removes the opinionated tailwind preflight list style */
+@layer base {
+  ul {
+    @apply list-inside list-disc;
+  }
+}
+
 :root {
   font-family:
     Clear Sans,

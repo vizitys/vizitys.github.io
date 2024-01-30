@@ -12,9 +12,7 @@
   let scrollWrapper: HTMLDivElement;
   let scrollContainers: HTMLElement[] = [];
 
-  $: console.log(scrollContainers);
-
-  let modalOpen = false;
+  let modal: Modal;
 
   const projectsToBeImported: (keyof typeof projects)[] = [
     "oispahalla",
@@ -27,7 +25,7 @@
 
   function openModal(projectName: keyof typeof projects) {
     currentProject = projectName;
-    modalOpen = true;
+    modal.openModal();
   }
 
   // dumb solution for dumb unicode problem aka emojis being more than one character
@@ -70,7 +68,7 @@
 </script>
 
 <main>
-  <Modal projectName={currentProject} isOpen={modalOpen} />
+  <Modal projectName={currentProject} bind:this={modal} />
   <div id="scroll-wrapper" bind:this={scrollWrapper}>
     <section
       id="1"
@@ -104,7 +102,7 @@
           under my belt via various projects I have done in my free time.
         </p>
         <div class="projects flex justify-around w-9/12">
-          {#each projectsToBeImported as project (project)}
+          {#each projectsToBeImported as project}
             <button on:click={() => openModal(project)}>
               <Card projectName={project} />
             </button>

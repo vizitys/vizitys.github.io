@@ -5,8 +5,6 @@
   export let projectName: keyof typeof projects;
 
   let project = projects[projectName];
-
-  $: console.log(project);
 </script>
 
 <div class="card">
