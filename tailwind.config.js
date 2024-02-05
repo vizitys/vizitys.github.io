@@ -7,6 +7,8 @@ export default {
       background: "rgb(var(--color-background) / <alpha-value>)",
       "background-darker":
         "rgb(var(--color-background-darker) / <alpha-value>)",
+      "background-complementary":
+        "rgb(var(--color-background-complementary) / <alpha-value>)",
       "accent-1": "rgb(var(--color-accent-1) / <alpha-value>)",
       "accent-2": "rgb(var(--color-accent-2) / <alpha-value>)",
       "accent-3": "rgb(var(--color-accent-3) / <alpha-value>)",

@@ -88,7 +88,7 @@
             class="profile-pic rounded-full"
           />
         </div>
-        <Icon name="down" class="down-arrow bounce fill-accent-3 w-14 h-14" />
+        <Icon name="down" class="down-arrow bounce fill-accent-3 w-16 h-16" />
       </div>
     </section>
     <section

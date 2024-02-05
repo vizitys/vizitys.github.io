@@ -59,10 +59,7 @@
   on:keydown={handleKeydown}
 >
   <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div
-    class="modal-content bg-background-darker z-10 mt-24"
-    on:click|stopPropagation
-  >
+  <div class="modal-content bg-background z-10 mt-24" on:click|stopPropagation>
     <span class="close" on:click={closeModal}>&times;</span>
     <div class="modal-inner flex">
       <div class="max-h-full max-w-2xl">

@@ -27,10 +27,10 @@
   --color-background: 23 28 40;
   background-color: var(--color-background);
 
-  --color-background-darker: 23 28 40;
+  --color-background-complementary: 42 51 72;
 
-  --color-accent-1: 85 25 139;
-  --color-accent-2: 170 165 255;
+  --color-accent-1: 27 23 40;
+  --color-accent-2: 23 37 40;
   --color-accent-3: 85 25 139;
 
   font-synthesis: none;

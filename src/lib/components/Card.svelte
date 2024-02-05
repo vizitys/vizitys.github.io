@@ -11,7 +11,7 @@
   <div class="card-picture">
     <img src={project.mainImage} alt={project.title} />
   </div>
-  <div class="card-content bg-background-darker">
+  <div class="card-content bg-background">
     <h2 class="card-title">{project.title}</h2>
     <p class="card-description">{project.shortDescription}</p>
   </div>
