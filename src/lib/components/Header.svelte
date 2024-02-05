@@ -9,14 +9,18 @@
   <div class="flex [&>*]:px-3">
     <a
       href="https://github.com/vizitys/vizitys.github.io"
+      title="This website's source code"
       target="_blank"
-      rel="noreferrer"
-      class="text-accent-1"><Icon name="github" class="fill-accent-3"></Icon></a
+      rel="noreferrer"><Icon name="github" class="fill-accent-3"></Icon></a
     >
     <a
       href="https://www.linkedin.com/in/vinski-lang/"
+      title="LinkedIn"
       target="_blank"
       rel="noreferrer"><Icon name="linkedin" class="fill-accent-3"></Icon></a
+    >
+    <a href="/Vinski_Lång_CV.pdf" title="My CV" target="_blank" rel="noreferrer"
+      ><Icon name="file" class="fill-accent-3"></Icon></a
     >
   </div>
 </div>
