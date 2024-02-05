@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* removes the opinionated tailwind preflight list style */
+@layer base {
+  ul {
+    @apply list-inside list-disc;
+  }
+}
+
 :root {
   font-family:
     Clear Sans,
@@ -15,7 +22,16 @@
 
   color-scheme: light dark;
   color: whitesmoke;
-  background-color: #242424;
+
+  /* imported in tailwind.config.js */
+  --color-background: 23 28 40;
+  background-color: var(--color-background);
+
+  --color-background-darker: 23 28 40;
+
+  --color-accent-1: 85 25 139;
+  --color-accent-2: 170 165 255;
+  --color-accent-3: 85 25 139;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,12 +48,20 @@ body {
 
 h1 {
   font-size: 3.2em;
+  font-weight: 700;
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.4em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: whitesmoke;
   }
-}
+} */
