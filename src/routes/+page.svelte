@@ -18,6 +18,7 @@
     "oispahalla",
     "junction2022",
     "junctionNexus",
+    "junction2023",
     "hallacoin",
   ];
 
@@ -32,7 +33,7 @@
   const splitter = new GraphemeSplitter();
 
   const nameGoal = "Vinski Lång";
-  const descriptionGoal = "Site still in development 🛠️";
+  const descriptionGoal = "Site still heavily in development 🛠️";
 
   let name = "";
   let description = "";
@@ -101,7 +102,7 @@
           Despite being a beginner in my studies, I have lots of experience
           under my belt via various projects I have done in my free time.
         </p>
-        <div class="projects flex justify-around w-9/12">
+        <div class="projects flex justify-around w-10/12">
           {#each projectsToBeImported as project}
             <button on:click={() => openModal(project)}>
               <Card projectName={project} />
@@ -193,6 +194,7 @@
     width: 25%;
   }
 
+  /* has to be global because of the way svelte handles classes */
   :global(.down-arrow) {
     animation:
       fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99),

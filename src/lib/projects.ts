@@ -34,7 +34,10 @@ Features:
       "https://github.com/hallabois/OispaHallaLB",
     ],
     mainImage: "/projects/oispahalla/oispahalla.webp",
-    galleryImages: ["/projects/oispahalla/oispahalla_lb.webp"],
+    galleryImages: [
+      "/projects/oispahalla/oispahalla_lb.webp",
+      "/projects/oispahalla/login.webp",
+    ],
   },
   junction2022: {
     title: "ComOwn - Junction 2022",
@@ -48,8 +51,12 @@ My teammate and I were one of the only teams composed entirely of high schoolers
       "https://github.com/xypine/junction2022-wolt/",
       "https://eu.junctionplatform.com/projects/junction-2022-1/view/63655476913fea0043cd8db0",
     ],
-    mainImage: "/projects/junction2022/comown.webp",
-    galleryImages: [],
+    mainImage: "/projects/junction2022/logo.png",
+    galleryImages: [
+      "/projects/junction2022/comown.webp",
+      "/projects/junction2022/store.png",
+      "/projects/junction2022/wolttrack.png",
+    ],
   },
   junctionNexus: {
     title: "EVE. - Junction Nexus 2023 track winner",

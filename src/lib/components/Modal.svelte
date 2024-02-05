@@ -23,6 +23,11 @@
 
   export function openModal() {
     isOpen = true;
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(intervalId);
     intervalId = setInterval(() => {
       const currentIndex = allImages.indexOf(selectedImage);
       const nextIndex = (currentIndex + 1) % allImages.length;
@@ -43,6 +48,7 @@
 
   function selectImage(image: string) {
     selectedImage = image;
+    resetTimer();
   }
 </script>
 

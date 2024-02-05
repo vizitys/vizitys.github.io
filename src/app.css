@@ -24,14 +24,14 @@
   color: whitesmoke;
 
   /* imported in tailwind.config.js */
-  --color-background: 22 71 115;
+  --color-background: 23 28 40;
   background-color: var(--color-background);
 
-  --color-background-darker: 11 43 64;
+  --color-background-darker: 23 28 40;
 
-  --color-accent-1: 30 89 89;
-  --color-accent-2: 59 140 110;
-  --color-accent-3: 137 217 157;
+  --color-accent-1: 85 25 139;
+  --color-accent-2: 170 165 255;
+  --color-accent-3: 85 25 139;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
