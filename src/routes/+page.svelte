@@ -111,7 +111,7 @@
         </div>
       </div>
     </section>
-    <section
+    <!-- <section
       id="3"
       class="site-section bg-accent-2"
       bind:this={scrollContainers[scrollContainers.length]}
@@ -124,7 +124,7 @@
       bind:this={scrollContainers[scrollContainers.length]}
     >
       mömmömmöö
-    </section>
+    </section> -->
   </div>
 </main>
 
