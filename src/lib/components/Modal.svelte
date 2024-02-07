@@ -90,7 +90,7 @@
         </div>
         {#each project.links as link (link)}
           <div class="flex">
-            <Icon name="link" class="w-6 h-6 fill-accent-2" />
+            <Icon name="link" class="w-6 h-6 fill-accent-3 mr-2" />
             <a class="underline" href={link} target="_blank" rel="noreferrer"
               >{link}</a
             >
