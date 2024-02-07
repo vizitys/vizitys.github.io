@@ -6,7 +6,7 @@
   import Modal from "$lib/components/Modal.svelte";
   import GraphemeSplitter from "grapheme-splitter";
 
-  import type projects from "$lib/projects.ts";
+  import type projects from "$lib/projects";
 
   // scroll container
   let scrollWrapper: HTMLDivElement;

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { icons } from "$lib/icons.ts";
-  import projects from "../projects.ts";
+  import projects from "$lib/projects";
 
   export let projectName: keyof typeof projects;
 

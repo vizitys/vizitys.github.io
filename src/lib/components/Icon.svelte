@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { icons } from "$lib/icons.ts";
+  import { icons } from "$lib/icons";
 
   export let name: keyof typeof icons;
   export let stroke = "10";

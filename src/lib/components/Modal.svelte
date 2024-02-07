@@ -3,7 +3,7 @@
 
   import Icon from "./Icon.svelte";
 
-  import projects, { type Project } from "../projects.ts";
+  import projects, { type Project } from "$lib/projects";
 
   export let projectName: keyof typeof projects;
   export let isOpen = false;

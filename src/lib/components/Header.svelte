@@ -2,10 +2,19 @@
   import Icon from "./Icon.svelte";
 </script>
 
+<svelte:head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@600&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <div
   class="flex fixed z-50 w-full justify-between bg-background items-center px-3 [&>*]:py-3"
 >
-  <h1>&lt Vinski Lång /&gt</h1>
+  <h1 class="name">&lt Vinski Lång /&gt</h1>
   <div class="flex [&>*]:px-3">
     <a
       href="https://github.com/vizitys/vizitys.github.io"
@@ -26,4 +35,7 @@
 </div>
 
 <style lang="postcss">
+  .name {
+    font-family: "Chivo Mono", monospace;
+  }
 </style>
