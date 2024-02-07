@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+
   import SvelteMarkdown from "svelte-markdown";
 
   import Icon from "./Icon.svelte";
@@ -19,6 +21,23 @@
     project = projects[projectName];
     selectedImage = project.mainImage;
     allImages = [project.mainImage, ...project.galleryImages];
+  }
+
+  // preload all gallery images
+  onMount(() => {
+    preloadImages(
+      Object.keys(projects).flatMap((key) => {
+        const project = projects[key];
+        return [project.mainImage, ...project.galleryImages];
+      }),
+    );
+  });
+
+  function preloadImages(imageUrls: string[]) {
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+    });
   }
 
   export function openModal() {
