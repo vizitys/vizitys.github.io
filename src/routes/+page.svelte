@@ -33,7 +33,8 @@
   const splitter = new GraphemeSplitter();
 
   const nameGoal = "Vinski Lång";
-  const descriptionGoal = "Site still heavily in development 🛠️";
+  const descriptionGoal =
+    "Information Technology Student at Aalto University 🛠️";
 
   let name = "";
   let description = "";
@@ -80,7 +81,16 @@
         <div class="pic-wrapper">
           <div class="title-container m-52">
             <h1 class="me">{name}</h1>
-            <p class="description">{description}</p>
+            <p class="description w-80 h-12">{description}</p>
+            <div class="cv-link flex justify-center mt-4">
+              <a
+                href="/Vinski_Lång_CV.pdf"
+                target="_blank"
+                class="bg-accent-3 text-background p-3 rounded-md"
+              >
+                <span>View My CV</span>
+              </a>
+            </div>
           </div>
           <img
             src="/me.jpg"
@@ -93,22 +103,20 @@
     </section>
     <section
       id="2"
-      class="site-section bg-accent-1"
+      class="site-section bg-accent-1 [&>*]:py-3"
       bind:this={scrollContainers[scrollContainers.length]}
     >
-      <div class="flex flex-col items-center text-center w-full [&>*]:py-3">
-        <h2>Projects</h2>
-        <p>
-          Despite being a beginner in my studies, I have lots of experience
-          under my belt via various projects I have done in my free time.
-        </p>
-        <div class="projects flex justify-around w-10/12">
-          {#each projectsToBeImported as project}
-            <button on:click={() => openModal(project)}>
-              <Card projectName={project} />
-            </button>
-          {/each}
-        </div>
+      <h2>Projects</h2>
+      <p>
+        Despite being a beginner in my studies, I have lots of experience under
+        my belt via various projects I have done in my free time.
+      </p>
+      <div class="projects flex justify-around w-10/12">
+        {#each projectsToBeImported as project}
+          <button on:click={() => openModal(project)}>
+            <Card projectName={project} />
+          </button>
+        {/each}
       </div>
     </section>
     <!-- <section
@@ -152,6 +160,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 
     height: 100%;
     width: 100%;
@@ -181,10 +191,15 @@
   }
 
   .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
     animation: move-text 2s 3s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
 
-    margin-left: -35%;
+    margin-left: -30%;
     margin-right: 0;
   }
 
@@ -192,6 +207,11 @@
     animation: fade-in 2s 4s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
     opacity: 0;
     width: 25%;
+  }
+
+  .cv-link {
+    animation: fade-in 2s 7.5s forwards cubic-bezier(0.32, 0.08, 0.43, 0.99);
+    opacity: 0;
   }
 
   /* has to be global because of the way svelte handles classes */
@@ -253,7 +273,7 @@
       margin-right: 0; */
     }
     to {
-      margin: 13rem;
+      margin: 12rem;
     }
   }
 

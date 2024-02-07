@@ -19,7 +19,7 @@
       target="_blank"
       rel="noreferrer"><Icon name="linkedin" class="fill-accent-3"></Icon></a
     >
-    <a href="/Vinski_Lång_CV.pdf" title="My CV" target="_blank" rel="noreferrer"
+    <a href="/Vinski_Lång_CV.pdf" title="My CV" target="_blank"
       ><Icon name="file" class="fill-accent-3"></Icon></a
     >
   </div>
