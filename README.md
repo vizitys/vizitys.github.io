@@ -1,6 +1,6 @@
 # My personal portfolio website
 
-Available at [vinski.fi](https://vinski.fi). Built with SvelteKit and TailwindCSS. Hosted with Github Pages.
+Available at [vinski.fi](https://vinski.fi). Built with SvelteKit, Typescript and TailwindCSS. Hosted with Github Pages.
 
 ## Development
 
