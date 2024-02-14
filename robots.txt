@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /Vinski_Lång_CV.pdf
+Disallow: /Vinski_Laang_CV.pdf
+Disallow: /Vinski_L%C3%A5ng_CV.pdf
